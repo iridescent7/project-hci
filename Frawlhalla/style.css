@@ -4,7 +4,7 @@
 
 header{
     width: 100vw;
-    height: 75px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,20 +23,50 @@ header{
     height: 50px;
 }
 
-#dropdown-button{
+.dropdown-button{
     background-color: inherit;
     border-color: inherit;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+.dropdown-content a{
+    padding: 15px 20px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown-content a:hover{
+    background-color: yellow;
 }
 
 #logo{
     width: 150px;
     height: 50px;
+    padding-left: 10px;
 }
 
 #playnow-hl{
     font-size: 20px;
     padding: 5px 10px 5px 10px;
     background-color: yellow;
+}
+
+#playnow-hl:hover{
+    color: yellow;
+    background-color: #2d3a67;
 }
 
 .slider-section{
