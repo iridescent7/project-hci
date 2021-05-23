@@ -4,7 +4,7 @@
 
 header{
     width: 100vw;
-    height: 80px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,7 +53,7 @@ header{
 }
 
 #logo{
-    width: 150px;
+    width: 170px;
     height: 50px;
     padding-left: 10px;
 }
@@ -71,19 +71,29 @@ header{
 
 .slider-section{
     width: 100vw;
-    height: 400px;
+    height: 500px;
     background-color: red;
 }
 
 .information-section{
     width: 100vw;
-    height: 400px;
-    background-color: orange;
+    height: 100%;
+    align-content: center;
+}
+
+.info{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-information, .right-information{
+    max-width: 40%;
 }
 
 footer{
     width: 100vw;
-    height: 75px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,8 +105,8 @@ footer{
 }
 
 .margin-lr{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .unused-hl:hover{
@@ -125,4 +135,41 @@ footer{
 
 .text-blue{
     color: #2d3a67;
+}
+
+.text-size-big{
+    font-size: 3em;
+}
+
+.text-size-small{
+    font-size: 1.5em;
+}
+
+.padding-tb{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+@media screen and (max-width:800px){
+    .info{
+        margin-left: 25px;
+        margin-right: 25px;
+        flex-direction: column;
+    }
+
+    .info-title{
+        font-size: 2em;
+    }
+
+    .left-information, .right-information{
+        max-width: 100%;
+    }
+
+    .right-information{
+        margin-top: 25px;
+    }
+
+    footer div, footer p{
+        font-size: 0.75em;
+    }
 }
