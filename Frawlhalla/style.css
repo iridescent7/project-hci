@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+}
+
+header{
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header{
+    margin-left: 20px;
+}
+
+.right-header{
+    margin-right: 20px;
+}
+
+#hamburger-icon{
+    width: 50px;
+    height: 50px;
+}
+
+.dropdown-button{
+    background-color: inherit;
+    border-color: inherit;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+.dropdown-content a{
+    padding: 15px 20px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown-content a:hover{
+    background-color: yellow;
+}
+
+#logo{
+    width: 150px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+#playnow-hl{
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    background-color: yellow;
+}
+
+#playnow-hl:hover{
+    color: yellow;
+    background-color: #2d3a67;
+}
+
+.slider-section{
+    width: 100vw;
+    height: 400px;
+    background-color: red;
+}
+
+.information-section{
+    width: 100vw;
+    height: 400px;
+    background-color: orange;
+}
+
+footer{
+    width: 100vw;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-hl-container{
+    display: flex;
+}
+
+.margin-lr{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.unused-hl:hover{
+    color: yellow;
+}
+
+.text-decoration-none{
+    text-decoration: none;
+}
+
+.bg-blue{
+    background-color: #6ac0f3;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.font-helvetica{
+    font-family: Helvetica;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.text-blue{
+    color: #2d3a67;
+}
