@@ -2,6 +2,10 @@
     margin: 0;
 }
 
+body{
+    overflow: visible;
+}
+
 header{
     width: 100vw;
     height: 100%;
@@ -70,9 +74,37 @@ header{
 }
 
 .slider-section{
-    width: 100vw;
+    max-width: 100vw;
     height: 500px;
-    background-color: red;
+    justify-content: center;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#next, #prev{
+    border: none;
+    background: none;
+    font-size: 2em;
+}
+
+#next:hover, #prev:hover{
+    cursor: pointer;
+}
+
+.slider-images{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-images img{
+    width: 780px;
+    height: 500px;
+}
+
+.slider-images{
+    display: flex;
+    width: 780px;
 }
 
 .information-section{

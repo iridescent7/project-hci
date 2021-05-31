@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../Assets//jquery-3.6.0.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -29,17 +30,25 @@
         </div>
 
         <div class="right-header padding-tb">
-            <a href="playNow.html" id="playnow-hl" class="text-decoration-none font-helvetica text-bold text-blue text-size-small">Play
+            <a href="playNow.html" id="playnow-hl"
+                class="text-decoration-none font-helvetica text-bold text-blue text-size-small">Play
                 Now</a>
         </div>
     </header>
 
     <section class="slider-section">
-
+        <button id="prev"><</button>
+        <div class="slider-images">
+            <div><img src="../Assets/Logo-1920x540.png"></div>
+            <div><img src="../Assets/Hamburger_icon.png"></div>
+            <div><img src="../Assets/Logo-1920x540.png"></div>
+        </div>
+        <button id="next">></button>
     </section>
 
     <section class="information-section padding-tb">
-        <p class="info-title text-blue font-helvetica text-bold margin-lr text-align-center text-size-big">Frawlhalla is a 2D platform fighter
+        <p class="info-title text-blue font-helvetica text-bold margin-lr text-align-center text-size-big">Frawlsalla is
+            a 2D platform fighter
             and 100% Free to Play on PS5, PS4, Xbox Series X, Xbox One, PC, Nintendo Switch and Mobile devices.</p>
         <div class="info">
             <div class="left-information font-helvetica text-size-small">
@@ -52,27 +61,31 @@
             <div class="right-information">
                 <p class="font-helvetica text-bold text-size-small">Online Ranked 1v1</p>
                 <ul>
-                    <li class="font-helvetica text-size-small">Climb the ranked ladder from Tin up to Platinum and beyond! Matches you
+                    <li class="font-helvetica text-size-small">Climb the ranked ladder from Tin up to Platinum and
+                        beyond! Matches you
                         against players near your skill level.</li>
                 </ul>
                 <br>
 
                 <p class="font-helvetica text-bold text-size-small">Online Ranked 2v2</p>
                 <ul>
-                    <li class="font-helvetica text-size-small">Climb the ranked ladder with a friend! Matches you and a partner against
+                    <li class="font-helvetica text-size-small">Climb the ranked ladder with a friend! Matches you and a
+                        partner against
                         teams near you skill level. Your friend can be online or right next to you</li>
                 </ul>
                 <br>
 
                 <p class="font-helvetica text-bold text-size-small">4 Player Online Free for All</p>
                 <ul>
-                    <li class="font-helvetica text-size-small">Casual matches where four fighters enter, but only one can win.</li>
+                    <li class="font-helvetica text-size-small">Casual matches where four fighters enter, but only one
+                        can win.</li>
                 </ul>
                 <br>
 
                 <p class="font-helvetica text-bold text-size-small">Cross-play Custom Rooms </p>
                 <ul>
-                    <li class="font-helvetica text-size-small">Invite up to 8 friends on PC, Xbox One, Xbox Series X, PS5, PS4, iOS, and
+                    <li class="font-helvetica text-size-small">Invite up to 8 friends on PC, Xbox One, Xbox Series X,
+                        PS5, PS4, iOS, and
                         Android or locally to a huge variety of custom matches: 4v4s, 1v3, 2v2, FFA, and much more.</li>
                 </ul>
             </div>
@@ -94,3 +107,52 @@
 </body>
 
 </html>
+
+<script>
+    const prev = $('#prev');
+    const next = $('#next');
+    const slider = $('.slider-images');
+    const images = $('.slider-images div');
+    const IMG_WIDTH = 750;
+
+    let currImgIndex = 0;
+    let currPosition = 0;
+
+    function main(){
+        prevClick();
+        nextClick();
+    }
+
+    main();
+
+    function prevClick(){
+        prev.on('click', () => {
+            currImgIndex--;
+            if(currImgIndex < 0){
+                currImgIndex = images.length - 1;
+                currPosition = -IMG_WIDTH * currImgIndex;
+            }else{
+                currPosition += IMG_WIDTH;
+            }
+            changeSliderImage();
+        })
+    }
+
+    function nextClick(){
+        next.on('click', () => {
+            currImgIndex++;
+            if(currImgIndex > (images.length - 1)){
+                currImgIndex = 0;
+                currPosition = +IMG_WIDTH * currImgIndex;
+            }else{
+                currPosition -= IMG_WIDTH;
+            }
+            changeSliderImage();
+        })
+    }
+
+    function changeSliderImage(){
+        const prevElement = images.eq(0);
+        prevElement.animate({marginLeft: currPosition});
+    }
+</script>
