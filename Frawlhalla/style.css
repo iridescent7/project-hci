@@ -133,7 +133,7 @@ header{
 }
 
 #register-feedback {
-    display: block;
+    display: none;
 }
 
 .screenshot-images, .character-info{
