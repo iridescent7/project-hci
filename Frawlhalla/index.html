@@ -37,13 +37,13 @@
     </header>
 
     <section class="slider-section">
-        <button id="prev"><</button>
+        <button id="prev">&#60;</button>
         <div class="slider-images">
-            <div><img src="../Assets/Logo.png"></div>
-            <div><img src="../Assets/Hamburger_icon.png"></div>
-            <div><img src="../Assets/Logo.png"></div>
+            <img src="../Assets/Logo.png">
+            <img src="../Assets/Hamburger_icon.png">
+            <img src="../Assets/Logo.png">
         </div>
-        <button id="next">></button>
+        <button id="next">&#62;</button>
     </section>
 
     <section class="information-section padding-tb">
@@ -106,53 +106,32 @@
     </footer>
 </body>
 
-</html>
-
 <script>
     const prev = $('#prev');
     const next = $('#next');
-    const slider = $('.slider-images');
-    const images = $('.slider-images div');
+
+    const images = $('.slider-images img');
+    const first = images.eq(0);
+
     const IMG_WIDTH = 750;
 
     let currImgIndex = 0;
-    let currPosition = 0;
 
-    function main(){
-        prevClick();
-        nextClick();
-    }
-
-    main();
-
-    function prevClick(){
-        prev.on('click', () => {
-            currImgIndex--;
-            if(currImgIndex < 0){
-                currImgIndex = images.length - 1;
-                currPosition = -IMG_WIDTH * currImgIndex;
-            }else{
-                currPosition += IMG_WIDTH;
-            }
-            changeSliderImage();
-        })
-    }
-
-    function nextClick(){
-        next.on('click', () => {
-            currImgIndex++;
-            if(currImgIndex > (images.length - 1)){
-                currImgIndex = 0;
-                currPosition = +IMG_WIDTH * currImgIndex;
-            }else{
-                currPosition -= IMG_WIDTH;
-            }
-            changeSliderImage();
-        })
-    }
-
-    function changeSliderImage(){
-        const prevElement = images.eq(0);
-        prevElement.animate({marginLeft: currPosition});
+    prev.on('click', () => {
+        currImgIndex--;
+        if (currImgIndex < 0)
+            currImgIndex = images.length - 1;
+        changeSliderImage();
+    })
+    
+    next.on('click', () => {
+        currImgIndex = (currImgIndex + 1) % images.length;
+        changeSliderImage();
+    })
+    
+    function changeSliderImage() {
+        let currPosition = -IMG_WIDTH * currImgIndex;
+        first.animate({marginLeft: currPosition});
     }
 </script>
+</html>
