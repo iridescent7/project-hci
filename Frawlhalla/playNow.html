@@ -38,18 +38,18 @@
     </header>
 
     <section class="register-section">
-        <form onsubmit="">
+        <form onsubmit="onRegister();return false;">
             <label for="name"><b>Name</b></label>
-            <input type="text" placeholder="Enter Name" name="name" required>
+            <input type="text" placeholder="Enter Name" id="name" name="name">
 
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" id="email" name="email">
 
             <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="password" placeholder="Enter Password" id="password" name="password">
 
             <label for="gender"><b>Gender</b></label>
-            <select name="gender" required>
+            <select id="gender" name="gender">
                 <option value="">Choose Option</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -57,10 +57,11 @@
             </select>
 
             <label>
-                <input type="checkbox" name="agreement"> I agree to the Terms and Conditions
+                <input type="checkbox" id="agreement" name="agreement"> I agree to the Terms and Conditions
             </label>
 
             <button type="submit">Register now</button>
+            <b id="register-feedback"></b>
         </form>
     </section>
 
@@ -78,4 +79,45 @@
     </footer>
 </body>
 
+<script>
+    const feedbackText = $('#register-feedback');
+
+    function onRegister() {
+        let name = $('#name')[0].value;
+        let email = $('#email')[0].value;
+        let password = $('#password')[0].value;
+        let gender = $('#gender')[0].value;
+        let agreement = $('#agreement:checked').val();
+        
+        let emailAt = email.indexOf('@');
+        let emailDot = email.indexOf('.');
+
+        if (name.length < 3) {
+            errorText('Name must be atleast 3 characters');
+        }
+        else if (emailAt <= 0 || emailDot <= emailAt + 2 || emailDot === email.length - 1) {
+            errorText('Please enter a valid email');
+        }
+        else if (password.length < 8) {
+            errorText('Password must be atleast 8 characters');
+        }
+        else if (gender.length === 0) {
+            errorText('You must specify your gender');
+        }
+        else if (agreement == null) {
+            errorText('You must agree to our terms & conditions');
+        }
+        else {
+            errorText('Registration success!', true);
+        }
+    }
+
+    function errorText(text, success=false) {
+        feedbackText.css({
+            'display': 'block',
+            'color': (success ? 'green' : 'red')
+        });
+        feedbackText.text(text);
+    }
+</script>
 </html>

@@ -132,6 +132,10 @@ header{
     flex-direction: column;
 }
 
+#register-feedback {
+    display: block;
+}
+
 .screenshot-images, .character-info{
     display: grid;
     margin: 10px;
