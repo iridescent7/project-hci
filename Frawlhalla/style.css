@@ -120,6 +120,22 @@ header{
     align-content: center;
 }
 
+.register-section {
+    display: flex;
+    justify-content: center;
+}
+
+.register-section form {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#register-feedback {
+    display: none;
+}
+
 .screenshot-images, .character-info{
     display: grid;
     margin: 10px;
@@ -247,4 +263,52 @@ footer{
     .screenshot-images, .character-info{
         grid-template-columns: repeat(1, 100%);
     }
+
+
 }
+
+/* Event CSS */
+
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap ;
+    justify-content: center;
+    padding: 20px;
+}
+
+.event {
+    display : flex;
+    flex-direction: column;
+    width: 310px;
+    height: 410px;
+    padding : 15px;
+}
+
+.event-img {
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.event-title {
+    padding-top : 5px; 
+    padding-bottom : 5px;
+    font-family: Helvetica, sans-serif;
+}
+
+.event-date-type{
+    padding-top: 10px;
+    padding-bottom: 0px;
+    color: rgb(73, 120, 135) ;
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.post-content {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100%;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+
