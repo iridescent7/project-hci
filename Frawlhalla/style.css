@@ -120,6 +120,22 @@ header{
     align-content: center;
 }
 
+.register-section {
+    display: flex;
+    justify-content: center;
+}
+
+.register-section form {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#register-feedback {
+    display: none;
+}
+
 .screenshot-images, .character-info{
     display: grid;
     margin: 10px;
