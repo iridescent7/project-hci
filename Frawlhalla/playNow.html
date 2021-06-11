@@ -28,27 +28,21 @@
             </div>
             <img id="logo" src="../Assets/Logo.png">
         </div>
-        <!--
-        <div class="right-header padding-tb">
-            <a href="playNow.html" id="playnow-hl"
-                class="text-decoration-none font-helvetica text-bold text-blue text-size-small">Play
-                Now</a>
-        </div>
-        -->
     </header>
 
-    <section class="register-section">
+    <section class="register-section font-helvetica">
+        <p class="info-title text-blue font-helvetica text-bold margin-lr text-align-center text-size-big">Register</p>
         <form onsubmit="onRegister();return false;">
-            <label for="name"><b>Name</b></label>
+            <label for="name" class="inputLbl"><b>Name</b></label>
             <input type="text" placeholder="Enter Name" id="name" name="name">
 
-            <label for="email"><b>Email</b></label>
+            <label for="email" class="inputLbl"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" id="email" name="email">
 
-            <label for="password"><b>Password</b></label>
+            <label for="password" class="inputLbl"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" id="password" name="password">
 
-            <label for="gender"><b>Gender</b></label>
+            <label for="gender" class="inputLbl"><b>Gender</b></label>
             <select id="gender" name="gender">
                 <option value="">Choose Option</option>
                 <option value="male">Male</option>
@@ -57,11 +51,11 @@
             </select>
 
             <label>
-                <input type="checkbox" id="agreement" name="agreement"> I agree to the Terms and Conditions
+                <input type="checkbox" id="agreement" name="agreement" class="inputLbl"> I agree to the Terms and Conditions
             </label>
 
-            <button type="submit">Register now</button>
-            <b id="register-feedback"></b>
+            <button type="submit" class="btnSubmit">Register now</button>
+            <b id="register-feedback" class="font-helvetica"></b>
         </form>
     </section>
 
