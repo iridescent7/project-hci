@@ -122,14 +122,46 @@ header{
 
 .register-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 135px;
+    margin-bottom: 135px;
 }
 
 .register-section form {
     width: 400px;
+    justify-items: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+}
+
+.register-section > form > input{
+    width: 100%;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+.register-section > form > select{
+    border: none;
+    padding: 16px 20px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+.btnSubmit{
+    background-color: #2d3a67;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.register-section input, .register-section select{
+    margin-bottom: 20px;
 }
 
 #register-feedback {
@@ -264,7 +296,9 @@ footer{
         grid-template-columns: repeat(1, 100%);
     }
 
-
+    .register-section form{
+        width: 300px;
+    }
 }
 
 /* Event CSS */
