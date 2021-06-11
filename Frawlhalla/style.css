@@ -59,6 +59,7 @@ header{
     display: block;
 }
 
+.dropdown-content a:active,
 .dropdown-content a:hover{
     background-color: yellow;
 }
