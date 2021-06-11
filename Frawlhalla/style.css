@@ -135,7 +135,6 @@ header{
     justify-items: center;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
 }
 
 .register-section > form > input{
@@ -147,6 +146,7 @@ header{
 }
 
 .register-section > form > select{
+    width: 100%;
     border: none;
     padding: 16px 20px;
     border-radius: 4px;
@@ -154,6 +154,7 @@ header{
 }
 
 .btnSubmit{
+    width: 100%;
     background-color: #2d3a67;
     border: none;
     color: white;
